@@ -1,0 +1,308 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f9ff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        /* very subtle background pattern – govt style clean */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#cad4e3 0.8px, transparent 0.8px);
+            background-size: 28px 28px;
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* main card container – clean, white, slight shadow, no heavy highlights */
+        .auth-container {
+            max-width: 1280px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            transition: all 0.2s ease;
+            border: 1px solid #eef2f8;
+        }
+
+        /* LEFT SIDE: signup / login form area */
+        .form-side {
+            flex: 1.2;
+            min-width: 300px;
+            padding: 2.5rem 2.8rem;
+            background: #ffffff;
+        }
+
+        /* RIGHT SIDE: branding & government message */
+        .brand-side {
+            flex: 1;
+            min-width: 280px;
+            background: #fafcff;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 1px solid #eef2f8;
+        }
+
+        /* header with optional toggle */
+        .form-header {
+            margin-bottom: 2rem;
+        }
+
+        .form-header h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1a2c3e;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-header h2 i {
+            color: #2c6280;
+            font-size: 1.6rem;
+        }
+
+        .toggle-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.75rem;
+        }
+
+        .toggle-btn {
+            background: transparent;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.4rem 0.2rem;
+            cursor: pointer;
+            color: #5b6e8c;
+            transition: 0.2s;
+            position: relative;
+        }
+
+        .toggle-btn.active {
+            color: #1e5f6e;
+        }
+
+        .toggle-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -0.75rem;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #1e5f6e;
+            border-radius: 2px;
+        }
+
+        /* form styling – clean, minimal */
+        .auth-form {
+            margin-top: 1.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.3rem;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #2c3e4e;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.2px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            border: 1px solid #cfdfed;
+            border-radius: 14px;
+            background: #ffffff;
+            transition: 0.2s;
+            outline: none;
+            color: #1a2c3e;
+        }
+
+        .input-group input:focus {
+            border-color: #7f9cbb;
+            box-shadow: 0 0 0 2px rgba(31, 97, 116, 0.08);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #1e5f6e;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: white;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .submit-btn:hover {
+            background: #154e5a;
+        }
+
+        .form-footer-note {
+            margin-top: 1.5rem;
+            font-size: 0.7rem;
+            text-align: center;
+            color: #5c6f87;
+            border-top: 1px solid #ecf3f9;
+            padding-top: 1.2rem;
+        }
+
+        /* right side – RakshaAuth branding */
+        .brand-content {
+            text-align: left;
+        }
+
+        .gov-emblem {
+            margin-bottom: 1.5rem;
+        }
+
+        .gov-emblem i {
+            font-size: 2.5rem;
+            color: #2c6280;
+            background: #eef3fc;
+            padding: 0.7rem;
+            border-radius: 60px;
+        }
+
+        .brand-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #162b38;
+            letter-spacing: -0.5px;
+            margin: 0.5rem 0 0.75rem;
+        }
+
+        .brand-tagline {
+            font-size: 0.9rem;
+            color: #3b5c74;
+            border-left: 3px solid #2c6280;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+
+        .ai-feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .ai-feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.85rem;
+            color: #2b4a62;
+        }
+
+        .ai-feature-list li i {
+            width: 24px;
+            color: #1e5f6e;
+            font-size: 0.9rem;
+        }
+
+        .gov-footer-text {
+            margin-top: 2rem;
+            font-size: 0.7rem;
+            color: #6a7f9b;
+            border-top: 1px solid #e2edf7;
+            padding-top: 1rem;
+        }
+
+        /* subtle animation on toggle */
+        .auth-form {
+            transition: opacity 0.2s ease;
+        }
+
+        /* responsive */
+        @media (max-width: 800px) {
+            .auth-container {
+                flex-direction: column;
+                border-radius: 24px;
+            }
+            .brand-side {
+                border-left: none;
+                border-top: 1px solid #eef2f8;
+                text-align: center;
+            }
+            .brand-content {
+                text-align: center;
+            }
+            .brand-tagline {
+                text-align: left;
+            }
+            .form-side {
+                padding: 2rem;
+            }
+        }
+
+        /* helper hidden class */
+        .hidden-form {
+            display: none;
+        }
+
+        /* clean note for government work */
+        .certification {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f0f5fa;
+            border-radius: 100px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.7rem;
+            color: #1e5f6e;
+            margin-top: 1rem;
+        }
+        #signupBranch {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            border: 1px solid #cfdfed;
+            border-radius: 14px;
+            background: #ffffff;
+            transition: 0.2s;
+            outline: none;
+            color: #1a2c3e;;
+        }
+   

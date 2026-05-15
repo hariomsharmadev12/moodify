@@ -1,0 +1,388 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0f1a;
+            overflow-x: hidden;
+        }
+
+        /* ========= ADMIN DASHBOARD WRAPPER ========= */
+        .admin-wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* ========= LEFT SIDEBAR - DARK NAVY ========= */
+        .admin-sidebar {
+            width: 280px;
+            background: linear-gradient(180deg, #0a1428 0%, #071126 100%);
+            backdrop-filter: blur(4px);
+            color: #b4c9e8;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid rgba(46, 125, 180, 0.2);
+            z-index: 100;
+            box-shadow: 4px 0 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar-header {
+            padding: 2rem 1.5rem 1.8rem;
+            border-bottom: 1px solid rgba(72, 156, 204, 0.2);
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            background: rgba(0, 164, 220, 0.15);
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0, 180, 255, 0.2);
+        }
+
+        .logo-icon i {
+            font-size: 24px;
+            color: #3bc0fc;
+        }
+
+        .logo-text h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text p {
+            font-size: 0.65rem;
+            opacity: 0.7;
+            margin-top: 2px;
+            color: #8bb3da;
+        }
+
+        /* sidebar navigation */
+        .sidebar-nav {
+            flex: 1;
+            padding: 0 1rem 2rem;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.8rem 1rem;
+            margin: 0.35rem 0;
+            border-radius: 14px;
+            color: #a0bbdf;
+            font-weight: 500;
+            transition: all 0.25s;
+            cursor: pointer;
+        }
+
+        .nav-item i {
+            width: 24px;
+            font-size: 1.1rem;
+        }
+
+        .nav-item:hover {
+            background: rgba(59, 192, 252, 0.12);
+            color: white;
+            box-shadow: 0 0 8px rgba(59, 192, 252, 0.3);
+            transform: translateX(4px);
+        }
+
+        .nav-item.active {
+            background: linear-gradient(95deg, #0d3552, #0e4a6e);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 160, 220, 0.3);
+            border-left: 3px solid #3bc0fc;
+        }
+
+        .logout-item {
+            margin-top: 2rem;
+            border-top: 1px solid rgba(72, 156, 204, 0.2);
+            padding-top: 1rem;
+            color: #ffaaaa;
+        }
+
+        .logout-item:hover {
+            background: rgba(220, 80, 80, 0.2);
+            color: #ffc2c2;
+        }
+
+        /* ========= MAIN RIGHT CONTENT ========= */
+        .admin-main {
+            flex: 1;
+            margin-left: 280px;
+            padding: 1.5rem 2rem;
+            background: #0b0f17;
+        }
+
+        /* Top Header */
+        .top-header {
+            background: rgba(18, 28, 45, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 0.9rem 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border: 1px solid rgba(59, 192, 252, 0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .welcome-area h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #f0f4fa;
+        }
+
+        .welcome-area h3 i {
+            color: #ffcd4a;
+        }
+
+        .welcome-area p {
+            font-size: 0.75rem;
+            color: #86a9d4;
+            margin-top: 4px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .admin-profile, .notifications {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(25, 40, 65, 0.7);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .admin-profile i, .notifications i {
+            font-size: 1.2rem;
+            color: #3bc0fc;
+        }
+
+        .admin-profile span, .notifications span {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #d1e2fc;
+        }
+
+        .admin-profile:hover, .notifications:hover {
+            background: rgba(59, 192, 252, 0.2);
+            box-shadow: 0 0 12px rgba(59, 192, 252, 0.3);
+        }
+
+        /* Glass Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .glass-card {
+            background: rgba(18, 28, 45, 0.65);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 1.5rem;
+            border: 1px solid rgba(59, 192, 252, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: #3bc0fc;
+            box-shadow: 0 0 25px rgba(59, 192, 252, 0.3);
+            background: rgba(20, 35, 60, 0.8);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-header span {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #8db5e5;
+        }
+
+        .card-header i {
+            font-size: 1.8rem;
+            color: #3bc0fc;
+            opacity: 0.8;
+        }
+
+        .card-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin: 0.3rem 0 0.2rem;
+        }
+
+        .card-sub {
+            font-size: 0.7rem;
+            color: #95b3da;
+        }
+
+        .alert-badge {
+            background: rgba(220, 60, 60, 0.2);
+            padding: 0.2rem 0.6rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            color: #ff8c8c;
+            display: inline-block;
+        }
+
+        /* Customers Table Section */
+        .customers-table-section {
+            background: rgba(18, 28, 45, 0.6);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 1.5rem;
+            border: 1px solid rgba(59, 192, 252, 0.2);
+            margin-top: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #d6eaff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .customers-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .customers-table th {
+            text-align: left;
+            padding: 1rem 0.8rem;
+            color: #9bc2f0;
+            font-weight: 600;
+            font-size: 0.75rem;
+            border-bottom: 1px solid rgba(59, 192, 252, 0.2);
+        }
+
+        .customers-table td {
+            padding: 1rem 0.8rem;
+            color: #ccdeff;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .delete-btn {
+            background: rgba(200, 60, 60, 0.2);
+            border: none;
+            color: #ff9a9a;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .delete-btn:hover {
+            background: #c73b3b;
+            color: white;
+            box-shadow: 0 0 10px #ff5555;
+        }
+
+        /* Other sections (hidden) */
+        .dynamic-section {
+            display: none;
+        }
+
+        .dynamic-section.active-section {
+            display: block;
+        }
+
+        /* Toast message */
+        .action-toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #1e2f3ad9;
+            backdrop-filter: blur(12px);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 2000;
+            transition: transform 0.25s ease;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: monospace;
+            border-left: 3px solid #3bc0fc;
+        }
+
+        @media (max-width: 900px) {
+            .admin-sidebar {
+                width: 80px;
+            }
+            .admin-sidebar .logo-text p, .admin-sidebar .logo-text h3, .admin-sidebar .nav-item span {
+                display: none;
+            }
+            .admin-main {
+                margin-left: 80px;
+            }
+        }
+
+        /* Scroll */
+        .admin-sidebar::-webkit-scrollbar {
+            width: 3px;
+        }
+        .logout-form{
+    width: 100%;
+}
+
+.logout-btn{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: left;
+    font: inherit;
+}
+    
